@@ -1,0 +1,296 @@
+/* Container and general layout */
+.container {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+
+  /* Allow container height to grow with content */
+  height: auto;
+  overflow-y: visible;
+  /* Optional: min-height to cover full viewport height */
+  min-height: 100vh;
+}
+html {
+  scroll-behavior: smooth;
+}
+html, body, #__next {
+  height: 100%;
+  overflow-y: auto;
+  margin: 0;
+  padding: 0;
+}
+
+.title {
+  text-align: center;
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #222;
+}
+
+/* Edit button */
+.editButton {
+  display: block;
+  background-color: #0070f3;
+  color: #fff;
+  font-weight: 600;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 1.5rem;
+  width: fit-content;
+  transition: background-color 0.3s ease;
+}
+
+.editButton:hover {
+  background-color: #005bb5;
+}
+
+/* Avatar image */
+.avatar {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 1.5rem auto;
+  object-fit: cover;
+  border: 3px solid #0070f3;
+  box-shadow: 0 2px 8px rgba(0, 112, 243, 0.3);
+}
+
+/* Profile info row - label and value aligned left and right */
+.profileInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.7rem 1rem;
+  margin-bottom: 0.75rem;
+  background-color: #f7f9fc;
+  border-radius: 6px;
+  border: 1px solid #e1e6eb;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #444;
+  user-select: none;
+}
+
+.value {
+  flex: 1 1 auto;
+  margin-left: 1rem;
+  text-align: right;
+  font-weight: 400;
+  color: #111;
+  word-break: break-word;
+  max-width: 65%;
+}
+
+/* Section titles */
+.sectionTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.2rem;
+  border-bottom: 3px solid #0070f3;
+  color: #0070f3;
+}
+
+/* Lists for experience, education, social */
+.list {
+  list-style: disc inside;
+  margin-left: 1rem;
+  color: #444;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+.list li {
+  margin-bottom: 1rem;
+}
+
+/* Form styling */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+/* Label with input side by side */
+.label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #444;
+  background: #f7f9fc;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  border: 1px solid #e1e6eb;
+  user-select: none;
+}
+
+.label > input,
+.label > textarea {
+  flex: 1 1 auto;
+  margin-left: 1rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  transition: border-color 0.3s ease;
+  font-family: inherit;
+  resize: vertical;
+  color: #111;
+}
+
+.label > input:focus,
+.label > textarea:focus {
+  outline: none;
+  border-color: #0070f3;
+  box-shadow: 0 0 6px #0070f3aa;
+}
+
+.textarea {
+  min-height: 100px;
+}
+
+/* Button group for form actions */
+.buttonGroup {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  justify-content: flex-start;
+}
+
+.button,
+.cancelButton {
+  font-family: inherit;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button {
+  background-color: #0070f3;
+  color: white;
+}
+
+.button:hover {
+  background-color: #005bb5;
+}
+
+.cancelButton {
+  background-color: #ccc;
+  color: #333;
+}
+
+.cancelButton:hover {
+  background-color: #999;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .container {
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  .avatar {
+    width: 90px;
+    height: 90px;
+  }
+
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .profileInfo,
+  .label {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .value,
+  .label > input,
+  .label > textarea {
+    margin-left: 0;
+    text-align: left;
+    width: 100%;
+    margin-top: 0.3rem;
+  }
+
+  .buttonGroup {
+    flex-direction: column;
+  }
+
+  .button,
+  .cancelButton {
+    width: 100%;
+  }
+  .socialContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+}
+.nestedSection {
+  background-color: #f7f9fc;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  border: 1px solid #e1e6eb;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 1rem;
+  user-select: none;
+}
+
+.addButton,
+.removeButton {
+  background-color: #0070f3;
+  color: white;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.removeButton {
+  background-color: #e00;
+}
+
+.addButton:hover {
+  background-color: #005bb5;
+}
+
+.removeButton:hover {
+  background-color: #a00;
+}
+
+.hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 1rem 0;
+}
