@@ -49,7 +49,6 @@ export default function Sidebar() {
                     }
                 })
                 setUser(user.data.user);
-                // console.log(user.data);
             } catch (error) {
                 console.log(error);
             }
@@ -74,7 +73,7 @@ export default function Sidebar() {
                     flexDirection: "column",
                     fontFamily: "'Montserrat', sans-serif",
                     position: "relative",
-                    boxShadow: "2px 0 8px rgba(0,0,0,0.6)", // YouTube-style right shadow
+                    boxShadow: "2px 0 8px rgba(0,0,0,0.6)",
                 },
 
             }}

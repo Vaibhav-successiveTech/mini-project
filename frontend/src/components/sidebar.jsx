@@ -73,6 +73,7 @@ const SideBar = () => {
                 flexDirection: "column",
                 fontFamily: "'Montserrat', sans-serif",
                 position: "relative",
+
             }}
         >
             {/* Header */}
@@ -108,8 +109,12 @@ const SideBar = () => {
             <Divider sx={{ borderColor: "#333", mb: 2 }} />
 
             {/* Users List */}
-            <Box sx={{ flex: 1, overflowY: "auto" }}>
-                {list.sort((a,b)=>a.name.localeCompare(b.name)).map((i) => (
+            <Box sx={{
+                flex: 1, overflowY: "auto", "&::-webkit-scrollbar": { display: "none" },
+                msOverflowStyle: "none",
+                scrollbarwidth: "none",
+            }}>
+                {list.sort((a, b) => a.name.localeCompare(b.name)).map((i) => (
                     <UserCard key={i._id} item={i}>{i.name}</UserCard>
                 ))}
             </Box>
